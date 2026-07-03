@@ -283,7 +283,7 @@ fun RegisterScreen(
                         isError = confirmPasswordError.isNotEmpty(),
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(16.dp),
-                        // 💡 KEMASKINI DI SINI: Ditambah focusedTextColor & unfocusedTextColor
+                       
                         colors = OutlinedTextFieldDefaults.colors(
                             focusedTextColor = TeksGelap,
                             unfocusedTextColor = TeksGelap,
@@ -400,7 +400,7 @@ fun RegisterScreen(
     }
 }
 
-// 💡 SELESAIKAN MASALAH PREVIEW: Masukkan lambda {} sebagai nilai ganti callback fungsi asal
+
 @Preview(showBackground = true)
 @Composable
 fun RegisterScreenPreview() {
