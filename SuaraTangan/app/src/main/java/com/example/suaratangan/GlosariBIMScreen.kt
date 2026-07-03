@@ -224,7 +224,7 @@ fun GlosariBIMScreen(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .clickable {
-                                        // 💡 Menghantar perkataan yang ditekan ke fungsi navigasi detail
+                                    
                                         onNavigateToIsyaratDetail(wordItem.word)
                                     },
                                 shape = RoundedCornerShape(24.dp),
