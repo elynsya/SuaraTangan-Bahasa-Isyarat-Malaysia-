@@ -50,7 +50,6 @@ fun AbjadScreen(
                 .sortedBy { it.word }
             data = list
 
-            // 💡 Logik Auto-Buka: Jika skrin dibuka membawa data perkataan hasil carian (Cth: "A")
             if (wordToShow.isNotBlank()) {
                 val found = list.find { it.word.equals(wordToShow, ignoreCase = true) }
                 if (found != null) {
@@ -111,9 +110,9 @@ fun AbjadScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(GlosariBgColor) // Menggunakan kelabu lembut/putih tema
+            .background(GlosariBgColor) /
     ) {
-        // TOP HEADER BAR (Putih Bersih)
+        // TOP HEADER BAR 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -172,9 +171,9 @@ fun AbjadScreen(
                                 .size(120.dp)
                                 .clip(RoundedCornerShape(20.dp)),
                             contentScale = ContentScale.Crop,
-                            // 💡 Tambah fallback, placeholder dan error handling
-                            placeholder = painterResource(id = R.drawable.ic_abjad), // Tukar kepada icon sedia ada anda
-                            error = painterResource(id = android.R.drawable.stat_notify_error), // Papar ikon error jika gagal
+                            
+                            placeholder = painterResource(id = R.drawable.ic_abjad), 
+                            error = painterResource(id = android.R.drawable.stat_notify_error), 
                             fallback = painterResource(id = android.R.drawable.stat_notify_error)
                         )
 
@@ -236,7 +235,6 @@ fun AbjadDetailScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // HURUF BESAR INDIKATOR (Menggunakan PinkUtama)
         Text(
             text = item.word,
             modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -247,7 +245,7 @@ fun AbjadDetailScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // BINGKAI GRAFIK GAMBAR BESAR (Putih + Sempadan Pink)
+       
         Card(
             modifier = Modifier
                 .padding(horizontal = 24.dp)
@@ -268,7 +266,7 @@ fun AbjadDetailScreen(
                     contentDescription = item.word,
                     modifier = Modifier.size(280.dp),
                     contentScale = ContentScale.Fit,
-                    // 💡 Tambah pengendalian ralat di sini juga
+                    
                     placeholder = painterResource(id = R.drawable.ic_abjad),
                     error = painterResource(id = android.R.drawable.stat_notify_error),
                     fallback = painterResource(id = android.R.drawable.stat_notify_error)
@@ -278,7 +276,6 @@ fun AbjadDetailScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Penerangan tambahan bawah gambar
         Text(
             text = "Ejaan jari bagi huruf di atas",
             fontSize = 14.sp,
