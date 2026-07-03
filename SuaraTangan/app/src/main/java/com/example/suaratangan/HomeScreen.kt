@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.sp
 import com.example.suaratangan.R
 import com.example.suaratangan.ui.theme.SuaraTanganTheme
 
-// Warna Sedia Ada
+
 val BackgroundColor = Color(0xFFF5F7F7)
 val PrimaryPink = Color(0xFFFF4F87)
 val SoftPink = Color(0xFFFFD6E5)
@@ -40,12 +40,12 @@ val TextGray = Color(0xFF757575)
 val DarkText = Color(0xFF003B4A)
 val LightText = Color(0xFF7A8A8F)
 
-// Warna Kad Komuniti
+
 val MintBg = Color(0xFFEAF9F6)
 val MintBorder = Color(0xFFBFF1E7)
 val MintText = Color(0xFF005B5C)
 
-// Warna Spesifik Ikon Ciri-Ciri
+
 val GlosariIconBg = Color(0xFFEFFBF8)
 val KuizIconBg = Color(0xFFFFF9EE)
 val PenyemakIconBg = Color(0xFFEEF5FF)
@@ -63,17 +63,17 @@ fun HomeScreen(
 ) {
     val scrollState = rememberScrollState()
 
-    // State untuk mengawal tab aktif pada Bottom Navigation Bar
+    
     var currentTab by remember { mutableStateOf("Utama") }
 
-    // 1. Menggunakan Scaffold untuk menguruskan ruang Bottom Bar dengan selamat
+  
     Scaffold(
         bottomBar = {
             CustomBottomBar(
                 selectedTab = currentTab,
                 onTabSelected = { tab ->
                     currentTab = tab
-                    // Tambah logik navigasi sebenar di sini jika perlu
+                   
                     when(tab) {
                         "Glosari" -> onNavigateToGlosari()
                         "Kuiz" -> onNavigateToKuiz()
@@ -83,17 +83,16 @@ fun HomeScreen(
                 }
             )
         }
-    ) { innerPadding -> // innerPadding ini sangat penting!
-
+    ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(BackgroundColor)
-                .padding(innerPadding) // 2. Memastikan kandungan tidak tenggelam di bawah bar
+                .padding(innerPadding) 
                 .verticalScroll(scrollState)
         ) {
 
-            // Top Header
+          
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -120,7 +119,6 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Kad Selamat Datang
             Card(
                 shape = RoundedCornerShape(24.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -175,7 +173,6 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Kad Bantu Komuniti
             Card(
                 shape = RoundedCornerShape(24.dp),
                 colors = CardDefaults.cardColors(containerColor = MintBg),
@@ -227,9 +224,7 @@ fun HomeScreen(
             )
 
             Spacer(modifier = Modifier.height(16.dp))
-
-            // Grid Ciri-Ciri Utama
-            Column(
+  Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 24.dp)
@@ -279,7 +274,7 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Log Keluar
+           
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
