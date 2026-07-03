@@ -52,7 +52,6 @@ fun CameraScreen(
     var currentIndex by remember { mutableStateOf(0) }
     val targetLetter = letters[currentIndex]
 
-    // 💡 Ditukar kepada "Ejaan Jari" supaya selaras dengan item CustomBottomBar
     var currentTab by remember { mutableStateOf("Ejaan Jari") }
 
     val handLandmarker = remember {
@@ -94,7 +93,7 @@ fun CameraScreen(
                         "Glosari" -> onNavigateToGlosari()
                         "Kuiz" -> onNavigateToKuiz()
                         "Terjemahan" -> onNavigateToTerjemah()
-                        "Ejaan Jari" -> onNavigateToPenyemak() // 💡 Ditukar ke "Ejaan Jari"
+                        "Ejaan Jari" -> onNavigateToPenyemak() 
                     }
                 }
             )
@@ -128,7 +127,7 @@ fun CameraScreen(
                 text = targetLetter,
                 fontSize = 56.sp,
                 fontWeight = FontWeight.ExtraBold,
-                color = PinkUtama // Ditukar ke PinkUtama supaya lebih menyerlah
+                color = PinkUtama 
             )
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -138,7 +137,7 @@ fun CameraScreen(
                     .fillMaxWidth()
                     .height(280.dp),
                 shape = RoundedCornerShape(24.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.White), // 💡 Diperbetulkan (Guna Color.White)
+                colors = CardDefaults.cardColors(containerColor = Color.White), 
                 elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
             ) {
                 AndroidView(
@@ -161,7 +160,7 @@ fun CameraScreen(
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(20.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.White) // 💡 Diperbetulkan (Huruf besar 'C' pada Color)
+                colors = CardDefaults.cardColors(containerColor = Color.White) 
             ) {
                 Column(
                     modifier = Modifier.padding(12.dp),
@@ -201,7 +200,7 @@ fun CameraScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = PinkUtama), // Diselaraskan tema pink
+                colors = ButtonDefaults.buttonColors(containerColor = PinkUtama), 
                 shape = RoundedCornerShape(12.dp)
             ) {
                 Text("SETERUSNYA", fontWeight = FontWeight.Bold, color = Color.White)
